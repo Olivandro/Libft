@@ -1,0 +1,12 @@
+a.out
+*.o
+*.so
+*.a
+*.swp
+.DS_Store
+test
+test/libft_test
+.vscode
+*.dSYM
+compile_commands.json
+.cache/
