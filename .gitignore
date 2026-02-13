@@ -10,3 +10,10 @@ test/libft_test
 *.dSYM
 compile_commands.json
 .cache/
+printfTester
+test-ftprintf
+*.dSYM
+main.c
+ftprintf-tester
+ft_printf_tester
+briseur2reves
