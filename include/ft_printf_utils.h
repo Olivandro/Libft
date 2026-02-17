@@ -38,8 +38,5 @@ typedef struct t_ftpf_data
 	int				size;
 }	t_ftpf_data;
 
-char	*ltoh(unsigned long n, int lower, int pointer);
-char	*ltoa(long n);
-void	*ft_realloc(void *ptr, size_t size);
 void	insert(t_ftpf_data *pdata, const char *str);
 #endif

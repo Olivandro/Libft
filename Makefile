@@ -43,26 +43,30 @@ SRC = ft_isalpha.c \
       ft_putchar_fd.c \
       ft_putstr_fd.c \
       ft_putendl_fd.c \
-      ft_putnbr_fd.c
-
-BONUS_SRC = ft_lstnew.c \
-	    ft_lstadd_front.c \
-	    ft_lstsize.c \
-	    ft_lstlast.c \
-	    ft_lstadd_back.c \
-	    ft_lstdelone.c \
-	    ft_lstclear.c \
-	    ft_lstiter.c \
-	    ft_lstmap.c
+      ft_putnbr_fd.c \
+      ft_lstnew.c \
+      ft_lstadd_front.c \
+      ft_lstsize.c \
+      ft_lstlast.c \
+      ft_lstadd_back.c \
+      ft_lstdelone.c \
+      ft_lstclear.c \
+      ft_lstiter.c \
+      ft_lstmap.c \
+      ft_printf.c \
+      ft_realloc.c \
+      ltoa.c \
+      ltoh.c \
+      ft_printf/insert.c
 
 OBJ = $(SRC:.c=.o)
-
-BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 NAME = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
+
+INC = -I./ -I./include
 
 REMOVE = rm -f
 
@@ -73,25 +77,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-bonus: $(NAME) $(BONUS_OBJ)
-	ar -rcs $(NAME) $(BONUS_OBJ)
-
-# libft-unit-tester pre-req
-ifeq ($(UNAME_S), Darwin)
-so:
-	$(CC) -fPIC $(CFLAGS) $(SRC) $(BONUS_SRC)
-	@gcc -shared -o libft.so $(OBJ) $(BONUS_OBJ)
-endif
-
-ifeq ($(UNAME_S), Linux)
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS_SRC)
-	@gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
-endif
-# end of libft-unit-test pre-req
-
 %.o:%.c
-	$(CC) $(CFLAGS) -c $< -o $(<:%.c=%.o)
+	$(CC) $(CFLAGS) $(INC) -c $< -o $(<:%.c=%.o)
 
 clean:
 	@rm -f $(OBJ) $(BONUS_OBJ)
@@ -101,6 +88,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-rebonus: fclean bonus
-
-.PHONY: all clean fclean re bonus rebonus
+.PHONY: all clean fclean re
