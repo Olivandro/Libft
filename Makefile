@@ -64,13 +64,11 @@ OBJ = $(SRC:.c=.o)
 NAME = libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 INC = -I./ -I./include
 
 REMOVE = rm -f
-
-UNAME_S := $(shell uname -s)
 
 all: $(NAME)
 
@@ -81,7 +79,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(INC) -c $< -o $(<:%.c=%.o)
 
 clean:
-	@rm -f $(OBJ) $(BONUS_OBJ)
+	@rm -f $(OBJ)
  
 fclean: clean
 	@$(REMOVE) $(NAME)
