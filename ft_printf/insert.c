@@ -31,7 +31,7 @@ static void	insert_ptr(char **dest, unsigned long src)
 
 	chk = src;
 	if (chk)
-		*dest = ltoh(chk, 1, 1);
+		*dest = ft_ltoh(chk, 1, 1);
 	else
 		*dest = ft_strdup("(nil)");
 }
@@ -43,7 +43,7 @@ static void	insert_ptr(char **dest, unsigned long src)
 
 	chk = src;
 	if (chk)
-		*dest = ltoh(chk, 1, 1);
+		*dest = ft_ltoh(chk, 1, 1);
 	else
 		*dest = ft_strdup("0x0");
 }
@@ -75,7 +75,7 @@ void	insert(t_ftpf_data *pdata, const char *str)
 	if (*str == 'd' || *str == 'i')
 		input = ft_itoa(va_arg(pdata->args, int));
 	if (*str == 'u')
-		input = ltoa((long)va_arg(pdata->args, unsigned int));
+		input = ft_ltoa((long)va_arg(pdata->args, unsigned int));
 	if (*str == '%')
 		ft_putchar_fd('%', 1);
 	if (*str == 'c')
@@ -85,8 +85,8 @@ void	insert(t_ftpf_data *pdata, const char *str)
 	if (*str == 'p')
 		insert_ptr(&input, va_arg(pdata->args, unsigned long));
 	if (*str == 'x')
-		input = ltoh((unsigned long)va_arg(pdata->args, unsigned int), 1, 0);
+		input = ft_ltoh((unsigned long)va_arg(pdata->args, unsigned int), 1, 0);
 	if (*str == 'X')
-		input = ltoh((unsigned long)va_arg(pdata->args, unsigned int), 0, 0);
+		input = ft_ltoh((unsigned long)va_arg(pdata->args, unsigned int), 0, 0);
 	print_insert(&input, &pdata->size);
 }
