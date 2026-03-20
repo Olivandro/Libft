@@ -12,23 +12,13 @@
 
 #include "libft.h"
 
-static size_t	strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
 char	*ft_strdup(const char *s)
 {
 	size_t	nmemb;
 	size_t	i;
 	char	*dup;
 
-	nmemb = strlen(s) + 1;
+	nmemb = ft_strlen(s) + 1;
 	dup = (char *) malloc(nmemb * sizeof(char));
 	i = 0;
 	if (!dup)
