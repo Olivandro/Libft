@@ -6,7 +6,7 @@
 #    By: alball <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/22 14:45:06 by alball            #+#    #+#              #
-#    Updated: 2025/11/22 14:45:21 by alball           ###   ########.fr        #
+#    Updated: 2026/03/20 11:25:26 by alball           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,8 @@ SRC = ft_isalpha.c \
       ft_lstmap.c \
       ft_printf.c \
       ft_realloc.c \
-      ltoa.c \
-      ltoh.c \
+      ft_ltoa.c \
+      ft_ltoh.c \
       ft_printf/insert.c
 
 OBJ = $(SRC:.c=.o)

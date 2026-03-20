@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ltoh.c                                             :+:      :+:    :+:   */
+/*   ft_ltoh.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alball <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: alball <alball@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 19:25:00 by alball            #+#    #+#             */
-/*   Updated: 2025/12/23 13:18:16 by alball           ###   ########.fr       */
+/*   Created: 2026/03/20 11:24:45 by alball            #+#    #+#             */
+/*   Updated: 2026/03/20 11:24:59 by alball           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	long2hexa(unsigned long n, char *s, size_t *i, int lower)
 	}
 }
 
-char	*ltoh(unsigned long n, int lower, int pointer)
+char	*ft_ltoh(unsigned long n, int lower, int pointer)
 {
 	unsigned int	lc;
 	char			*p;
