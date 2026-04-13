@@ -19,8 +19,8 @@ static size_t	longcount(unsigned long n)
 	lc = 0;
 	if (n == 0)
 		return (4);
-	if (n < 0)
-		lc += 1;
+	//if (n < 0)
+	//	lc += 1;
 	while (n)
 	{
 		n = n / 10;
